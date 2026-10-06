@@ -1,12 +1,12 @@
 {
-  "name": "darshan-portfolio",
+  "name": "awe0-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "Personal portfolio of Darshan Kushalkar — Full-Stack Developer",
-  "author": "Darshan Kushalkar <thedarshan.dev@gmail.com>",
+  "description": "Personal blog of awe0",
+  "author": "awe0 <zhuj3188@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DarshanCodes09/My-Portfolio.git"
+    "url": "https://github.com/FelixZoe/blog.git"
   },
   "scripts": {
     "dev": "next dev --turbopack",

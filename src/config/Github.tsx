@@ -6,7 +6,7 @@
  */
 
 export const githubConfig = {
-  username: 'DarshanCodes09',
+  username: 'FelixZoe',
   apiUrl: 'https://github-contributions-api.jogruber.de/v4',
 
   // Display settings

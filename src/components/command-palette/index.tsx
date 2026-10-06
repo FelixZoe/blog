@@ -169,11 +169,6 @@ function useDefaultCommandGroups(): CommandGroupDef[] {
             action: () => window.open(siteConfig.social.twitter, '_blank'),
           },
           {
-            id: 'linkedin',
-            label: 'LinkedIn',
-            action: () => window.open(siteConfig.social.linkedin, '_blank'),
-          },
-          {
             id: 'email',
             label: 'Send Email',
             action: () => {

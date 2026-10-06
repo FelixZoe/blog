@@ -171,7 +171,7 @@ export async function POST(request: NextRequest) {
         {
           error:
             result.error === 'Telegram bot is not configured.'
-              ? 'Contact form is not configured yet. Email me directly at thedarshan.dev@gmail.com'
+              ? 'Contact form is not configured yet. Email me directly at zhuj3188@gmail.com'
               : 'Failed to send message. Please try again or email me directly.',
         },
         {

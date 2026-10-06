@@ -1,15 +1,15 @@
-# Darshan Kushalkar — Portfolio
+# awe0 — Blog
 
-Personal portfolio website showcasing my work as a **Full-Stack Developer**. Built with Next.js, TypeScript, and Tailwind CSS.
+Personal blog of **awe0**. Built with Next.js, TypeScript, and Tailwind CSS.
 
 **Live:** https://blog-felix-d7f5.vercel.app
-**Repository:** [github.com/DarshanCodes09/My-Portfolio](https://github.com/DarshanCodes09/My-Portfolio)
+**Repository:** [github.com/FelixZoe/blog](https://github.com/FelixZoe/blog)
 
 ---
 
 ## About
 
-I'm **Darshan Kushalkar**, a full-stack developer building modern web apps, AI products, and automation systems with a focus on performance, simplicity, and exceptional user experience.
+I'm **awe0**, building web apps, AI products, and automation systems with a focus on performance, simplicity, and exceptional user experience.
 
 
 This portfolio includes:
@@ -90,7 +90,7 @@ public/
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/DarshanCodes09/My-Portfolio.git
+git clone https://github.com/FelixZoe/blog.git
 cd My-Portfolio
 npm install
 ```
@@ -147,7 +147,7 @@ Recommended: [Vercel](https://vercel.com)
 1. Push to GitHub
 2. Import the repository in Vercel
 3. Add environment variables in the Vercel dashboard
-4. Set `NEXT_PUBLIC_URL` to your production domain (e.g. `https://darshan.dev`)
+4. Set `NEXT_PUBLIC_URL` to your production domain (e.g. `https://blog-felix-d7f5.vercel.app`)
 
 ---
 
@@ -170,11 +170,9 @@ Recommended: [Vercel](https://vercel.com)
 
 ## Contact
 
-- **Email:** [thedarshan.dev@gmail.com](mailto:thedarshan.dev@gmail.com)
-- **GitHub:** [@DarshanCodes09](https://github.com/DarshanCodes09)
-- **X:** [@thedarshan_dev](https://x.com/thedarshan_dev)
-- **LinkedIn:** [Darshan Kushalkar](https://www.linkedin.com/in/darshan-kushalkar-2919aa234/)
-- **Medium:** [@darshan.kushal321](https://medium.com/@darshan.kushal321)
+- **Email:** [zhuj3188@gmail.com](mailto:zhuj3188@gmail.com)
+- **GitHub:** [@FelixZoe](https://github.com/FelixZoe)
+- **X:** [@oemfelix](https://x.com/oemfelix)
 
 ## License
 MIT — see [LICENSE](LICENSE) if present, or use freely with attribution.

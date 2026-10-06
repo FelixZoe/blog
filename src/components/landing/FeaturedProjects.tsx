@@ -19,7 +19,7 @@ export default function FeaturedProjects() {
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={`${project.title} - Project by Darshan Kushalkar`}
+                  alt={`${project.title} - Project by awe0`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 />

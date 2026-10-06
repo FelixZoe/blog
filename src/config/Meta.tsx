@@ -147,9 +147,7 @@ export function getStructuredData() {
     jobTitle: siteConfig.title,
     sameAs: [
       siteConfig.social.github,
-      siteConfig.social.linkedin,
       siteConfig.social.twitter,
-      siteConfig.social.medium,
     ],
     image: `${siteConfig.url}${siteConfig.avatar}`,
     description: siteConfig.bio,

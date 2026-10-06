@@ -7,7 +7,7 @@ const COUNT_FILE = path.join(process.cwd(), 'data', 'visitor-count.json');
 const TMP_COUNT_FILE = path.join('/tmp', 'visitor-count.json');
 const BASE_COUNT = Number(process.env.VISITOR_COUNT_BASE || 0);
 const COUNTAPI_NAMESPACE =
-  process.env.VISITOR_COUNT_NAMESPACE || 'darshan-kushalkar-portfolio';
+  process.env.VISITOR_COUNT_NAMESPACE || 'awe0-blog';
 const COUNTER_KEY =
   process.env.VISITOR_COUNTER_KEY || `${COUNTAPI_NAMESPACE}-visitors`;
 const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1';
