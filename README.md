@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my work as a **Full-Stack Developer**. Built with Next.js, TypeScript, and Tailwind CSS.
 
-**Live:** click [`_PUBLIC_URL`](https://www.thedarshan.space/) in production  
+**Live:** https://blog-felix-d7f5.vercel.app
 **Repository:** [github.com/DarshanCodes09/My-Portfolio](https://github.com/DarshanCodes09/My-Portfolio)
 
 ---
