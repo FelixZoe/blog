@@ -5,6 +5,11 @@ import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '../ui/tooltip';
 import Container from '../common/Container';
 import FadeIn from '../common/FadeIn';
 
@@ -17,19 +22,28 @@ function TechIcon({ name, icon, iconDark }: (typeof techStack)[number]) {
   const src = mounted && resolvedTheme === 'dark' ? (iconDark ?? icon) : icon;
 
   return (
-    <div
-      className="group flex size-8 items-center justify-center rounded-md transition-transform duration-200 hover:scale-110 sm:size-9"
-      title={name}
-    >
-      <Image
-        src={src}
-        alt={name}
-        width={28}
-        height={28}
-        className="size-6 object-contain sm:size-7"
-        unoptimized
-      />
-    </div>
+    <Tooltip delayDuration={200}>
+      <TooltipTrigger asChild>
+        <div className="group flex size-8 cursor-default items-center justify-center rounded-md transition-transform duration-200 hover:scale-110 sm:size-9">
+          <Image
+            src={src}
+            alt={name}
+            width={28}
+            height={28}
+            className="size-6 object-contain sm:size-7"
+            unoptimized
+          />
+        </div>
+      </TooltipTrigger>
+      <TooltipContent
+        side="top"
+        sideOffset={8}
+        arrowClassName="fill-black dark:fill-zinc-900"
+        className="rounded-xl border-0 bg-black px-4 py-2 text-[13px] font-medium text-white shadow-lg dark:bg-zinc-900 dark:text-zinc-100"
+      >
+        {name}
+      </TooltipContent>
+    </Tooltip>
   );
 }
 
