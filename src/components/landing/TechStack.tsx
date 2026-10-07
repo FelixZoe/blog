@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import Container from '../common/Container';
-import FadeIn from '../common/FadeIn';
 import HoverBubble from '../common/HoverBubble';
 
 function TechIcon({ name, icon, iconDark }: (typeof techStack)[number]) {
@@ -35,14 +34,14 @@ function TechIcon({ name, icon, iconDark }: (typeof techStack)[number]) {
 export default function TechStack() {
   return (
     <Container className="mt-16">
-      <FadeIn>
+      
         <div className="section-kicker mb-5">Tech Stack</div>
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           {techStack.map((tech) => (
             <TechIcon key={tech.name} {...tech} />
           ))}
         </div>
-      </FadeIn>
+      
     </Container>
   );
 }
