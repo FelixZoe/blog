@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: 'TEMPO',
     description:
       'Local-first personal workspace: tasks, calendar, pomodoro, RSS and AI, with self-hosted sync. Time. Everything. Moments. Productivity. Organized.',
-    image: '/project/tempo.png',
+    image: '/project/tempo.jpg',
     link: 'https://github.com/FelixZoe/TEMPO',
     technologies: [
       { name: 'Flutter', icon: <FlutterIcon key="flutter" /> },
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     title: 'Micro-Lab',
     description:
       'Micro-interaction Lab — Apple-style 60fps micro-interaction showcase. A laboratory of delightful web micro-interactions.',
-    image: '/project/micro-lab.png',
+    image: '/project/micro-lab.jpg',
     link: 'https://github.com/FelixZoe/Micro-Lab',
     technologies: [
       { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     title: 'FlowTime',
     description:
       'Flow-state focus app: pomodoro timer, schedule, cloud drive, blog, AI assistant and cloud toolkit — Flutter cross-platform.',
-    image: '/project/flowtime.png',
+    image: '/project/flowtime.jpg',
     link: 'https://github.com/FelixZoe/flowtime',
     technologies: [
       { name: 'Flutter', icon: <FlutterIcon key="flutter" /> },
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     title: 'Deskemy',
     description:
       'Windows desktop course video player — watch and manage course videos right from your desk.',
-    image: '/project/deskemy.png',
+    image: '/project/deskemy.jpg',
     link: 'https://github.com/FelixZoe/Deskemy',
     technologies: [
       { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
