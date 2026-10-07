@@ -109,7 +109,6 @@ export function ProjectShowcaseCard({
     useTransform(pointerY, [-0.5, 0.5], [-3, 3]),
     TILT_SPRING,
   );
-  const scale = useSpring(isHovered && tiltEnabled ? 1.02 : 1, TILT_SPRING);
 
   useEffect(() => {
     setTiltEnabled(
@@ -154,7 +153,6 @@ export function ProjectShowcaseCard({
         style={{
           rotateX: tiltEnabled ? rotateX : 0,
           rotateY: tiltEnabled ? rotateY : 0,
-          scale,
           transformStyle: 'preserve-3d',
           willChange: 'transform',
         }}
