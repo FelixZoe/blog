@@ -59,12 +59,13 @@ export default function WakaTime() {
 
   if (!loaded) {
     // Reserve the row's space while loading so the page doesn't jump
-    // when the stats arrive (avoids layout shift).
+    // when the stats arrive (avoids layout shift). Show a pulsing
+    // placeholder so the row appears in order with the rest.
     return (
       <div className="mb-6" aria-hidden>
-        <p className="invisible inline-flex max-w-full items-center gap-2 text-[12px] sm:text-[13px]">
-          <span className="size-3.5 shrink-0 sm:size-4" />
-          <span>0m coded in the last 7 days</span>
+        <p className="inline-flex max-w-full animate-pulse items-center gap-2 text-[12px] text-zinc-400 sm:text-[13px]">
+          <span className="size-3.5 shrink-0 rounded-[3px] bg-zinc-200 sm:size-4 dark:bg-zinc-800" />
+          <span>Loading coding stats…</span>
         </p>
       </div>
     );
