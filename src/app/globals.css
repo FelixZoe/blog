@@ -131,6 +131,9 @@
 
   html {
     scroll-behavior: smooth;
+    /* Reserve scrollbar space so page content doesn't shift when
+       navigating between pages with/without a scrollbar. */
+    scrollbar-gutter: stable;
   }
 
   body {
