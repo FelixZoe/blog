@@ -1,6 +1,13 @@
+'use client';
+
 import { footerConfig } from '@/config/Footer';
 import Link from 'next/link';
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '../ui/tooltip';
 import Container from './Container';
 
 function XIcon() {
@@ -44,31 +51,33 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-muted text-[13px]">{footerConfig.copyright}</p>
           <div className="flex items-center gap-4">
-            <Link
-              href={footerConfig.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X"
-              className="text-muted transition-colors hover:text-zinc-900 dark:hover:text-zinc-300"
-            >
-              <XIcon />
-            </Link>
-            <Link
-              href={footerConfig.social.email}
-              aria-label="Email"
-              className="text-muted transition-colors hover:text-zinc-900 dark:hover:text-zinc-300"
-            >
-              <MailIcon />
-            </Link>
-            <Link
-              href={footerConfig.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-muted transition-colors hover:text-zinc-900 dark:hover:text-zinc-300"
-            >
-              <GithubIcon />
-            </Link>
+            {[
+              { label: 'X', href: footerConfig.social.twitter, Icon: XIcon },
+              { label: 'Email', href: footerConfig.social.email, Icon: MailIcon },
+              { label: 'GitHub', href: footerConfig.social.github, Icon: GithubIcon },
+            ].map(({ label, href, Icon }) => (
+              <Tooltip key={label} delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="text-muted transition-colors hover:text-zinc-900 dark:hover:text-zinc-300"
+                  >
+                    <Icon />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent
+                  side="top"
+                  sideOffset={8}
+                  arrowClassName="fill-black dark:fill-zinc-900"
+                  className="rounded-xl border-0 bg-black px-4 py-2 text-[13px] font-medium text-white shadow-lg dark:bg-zinc-900 dark:text-zinc-100"
+                >
+                  {label}
+                </TooltipContent>
+              </Tooltip>
+            ))}
           </div>
         </div>
       </Container>
