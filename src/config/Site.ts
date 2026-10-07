@@ -4,7 +4,7 @@ export const siteConfig = {
   location: 'China',
   email: 'zhuj3188@gmail.com',
   pronouns: 'he/him',
-  avatar: '/assets/logo.png',
+  avatar: '/assets/avatar.png',
   bio: 'I build end-to-end web products, paying attention to the small details that make software feel polished and effortless to use. Currently working with TypeScript, React, Next.js, Tailwind CSS.',
   url: process.env.NEXT_PUBLIC_URL ?? 'http://localhost:3000',
   ogImage: '/assets/logo.png',
