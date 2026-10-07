@@ -118,7 +118,12 @@ function ContributionSkeleton({
 }: {
   colorScheme: 'dark' | 'light';
 }) {
-  const emptyColor = colorScheme === 'dark' ? '#000000' : '#ffffff';
+  // Use the same empty-cell colors as the real calendar so the skeleton
+  // looks like the calendar's empty state (dark: near-black, light: near-white).
+  const emptyColor =
+    colorScheme === 'dark'
+      ? githubConfig.theme.dark[0]
+      : githubConfig.theme.light[0];
   const months = [
     'Oct',
     'Nov',
