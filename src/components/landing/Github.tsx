@@ -4,6 +4,7 @@ import { githubConfig } from '@/config/Github';
 import { useTheme } from 'next-themes';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { Loader2 } from 'lucide-react';
 import React, {
   type ReactElement,
   cloneElement,
@@ -23,13 +24,25 @@ import {
 } from '../ui/tooltip';
 
 /**
+ * Simple loading placeholder that reserves the calendar's exact space
+ * (739×143) while loading, with a centered spinner.
+ */
+function CalendarLoadingPlaceholder() {
+  return (
+    <div className="overflow-x-auto" aria-hidden>
+      <div className="flex h-[143px] w-[739px] items-center justify-center">
+        <Loader2 className="size-5 animate-spin text-zinc-400 dark:text-zinc-600" />
+      </div>
+    </div>
+  );
+}
+
+/**
  * Theme-aware fallback for the dynamic import below. The `loading` prop
  * can't access hooks directly, so we wrap it in a component.
  */
 function CalendarLoadingFallback() {
-  const { resolvedTheme, theme } = useTheme();
-  const colorScheme = (resolvedTheme ?? theme) === 'dark' ? 'dark' : 'light';
-  return <ContributionSkeleton colorScheme={colorScheme} />;
+  return <CalendarLoadingPlaceholder />;
 }
 
 const ActivityCalendar = dynamic(
@@ -118,81 +131,6 @@ function ContributionBlock({
   );
 }
 
-/**
- * Skeleton that mirrors the contribution calendar's exact layout
- * (739×143: month labels + 53×7 grid + footer) so loading feels like
- * the graph fading in, not popping into empty space.
- */
-function ContributionSkeleton({
-  colorScheme,
-}: {
-  colorScheme: 'dark' | 'light';
-}) {
-  // Pure white in light mode, pure black in dark mode.
-  const emptyColor = colorScheme === 'dark' ? '#000000' : '#ffffff';
-  const months = [
-    'Oct',
-    'Nov',
-    'Dec',
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-  ];
-
-  return (
-    <div className="overflow-x-auto" aria-hidden>
-      <div className="w-[739px] animate-pulse">
-        {/* Month labels */}
-        <div className="flex pt-[2px] text-[12px] leading-none text-muted">
-          {months.map((month, i) => (
-            <span
-              key={month}
-              className="shrink-0"
-              style={{ width: i === 0 ? 52 : 62, marginRight: 2 }}
-            >
-              {month}
-            </span>
-          ))}
-        </div>
-        {/* Grid: 53 weeks × 7 days */}
-        <div className="mt-[8px] flex gap-[3px]">
-          {Array.from({ length: 53 }).map((_, week) => (
-            <div key={week} className="flex shrink-0 flex-col gap-[3px]">
-              {Array.from({ length: 7 }).map((_, day) => (
-                <div
-                  key={day}
-                  className="size-[11px] rounded-[2px]"
-                  style={{ backgroundColor: emptyColor }}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-        {/* Footer */}
-        <div className="mt-[8px] flex h-[18px] items-center justify-between text-[12px]">
-          <span className="invisible">0 Contributions · 2025–26</span>
-          <span className="invisible flex items-center gap-1">
-            Less
-            {[0, 1, 2, 3, 4].map((l) => (
-              <span
-                key={l}
-                className="size-[11px] rounded-[2px]"
-                style={{ backgroundColor: emptyColor }}
-              />
-            ))}
-            More
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function Github() {
   const [contributions, setContributions] = useState<ContributionItem[]>([]);
@@ -260,7 +198,7 @@ export default function Github() {
     <Container className="mt-13">
       <FadeIn>
         {isLoading ? (
-          <ContributionSkeleton colorScheme={colorScheme} />
+          <CalendarLoadingPlaceholder />
         ) : hasError || contributions.length === 0 ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
