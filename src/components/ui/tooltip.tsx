@@ -55,7 +55,9 @@ function TooltipContent({
       >
         {children}
         {arrowClassName !== undefined && (
-          <TooltipPrimitive.Arrow className={cn('size-2', arrowClassName)} />
+          <TooltipPrimitive.Arrow
+            className={cn('pointer-events-none size-2', arrowClassName)}
+          />
         )}
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
