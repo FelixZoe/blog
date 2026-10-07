@@ -2,21 +2,20 @@ import { experiences } from '@/config/Experience';
 import Link from 'next/link';
 
 import Container from '../common/Container';
-import FadeIn from '../common/FadeIn';
 import TechIconRow from '../common/TechIconRow';
 
 export default function Experience() {
   return (
     <Container className="mt-16">
-      <FadeIn>
+      
         <div className="section-kicker mb-6">Experience</div>
-      </FadeIn>
+      
       <div className="relative">
         <div className="absolute top-2 bottom-2 left-[7px] w-px bg-zinc-200 dark:bg-zinc-800" />
 
         <div className="flex flex-col gap-10">
           {experiences.map((exp, index) => (
-            <FadeIn key={exp.company} delay={index * 0.08}>
+            
               <div className="relative pl-8">
                 <div
                   className={`absolute top-[6px] left-0 size-[15px] rounded-full border-[3px] ${
@@ -72,7 +71,7 @@ export default function Experience() {
                   <TechIconRow technologies={exp.technologies} />
                 </div>
               </div>
-            </FadeIn>
+            
           ))}
         </div>
       </div>
