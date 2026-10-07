@@ -1,14 +1,8 @@
-'use client';
-
 import { footerConfig } from '@/config/Footer';
 import Link from 'next/link';
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '../ui/tooltip';
 import Container from './Container';
+import HoverBubble from './HoverBubble';
 
 function XIcon() {
   return (
@@ -56,27 +50,17 @@ export default function Footer() {
               { label: 'Email', href: footerConfig.social.email, Icon: MailIcon },
               { label: 'GitHub', href: footerConfig.social.github, Icon: GithubIcon },
             ].map(({ label, href, Icon }) => (
-              <Tooltip key={label} delayDuration={200}>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="text-muted transition-colors hover:text-zinc-900 dark:hover:text-zinc-300"
-                  >
-                    <Icon />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent
-                  side="top"
-                  sideOffset={8}
-                  arrowClassName="fill-black dark:fill-zinc-900"
-                  className="rounded-2xl pointer-events-none border-0 bg-black data-[state=closed]:animate-none! px-4 py-2 text-[13px] font-medium text-white shadow-lg dark:bg-zinc-900 dark:text-zinc-100"
-                >
-                  {label}
-                </TooltipContent>
-              </Tooltip>
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="group relative text-muted transition-colors hover:text-zinc-900 dark:hover:text-zinc-300"
+              >
+                <Icon />
+                <HoverBubble label={label} />
+              </Link>
             ))}
           </div>
         </div>
