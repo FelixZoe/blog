@@ -2,15 +2,14 @@
 
 import { githubConfig } from '@/config/Github';
 import { useTheme } from 'next-themes';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Loader2 } from 'lucide-react';
 import React, {
   type ReactElement,
   cloneElement,
   useEffect,
   useState,
 } from 'react';
+import ActivityCalendar from 'react-activity-calendar';
 import type { Activity } from 'react-activity-calendar';
 
 import Container from '../common/Container';
@@ -24,36 +23,17 @@ import {
 } from '../ui/tooltip';
 
 /**
- * Simple loading placeholder that reserves the calendar's exact space
- * (739×143) while loading, with a centered spinner.
+ * Invisible placeholder that reserves the calendar's exact space (739×143)
+ * while loading. No spinner — the data loads in milliseconds, so this
+ * feels instant like a static site.
  */
-function CalendarLoadingPlaceholder() {
+function CalendarPlaceholder() {
   return (
     <div className="overflow-x-auto" aria-hidden>
-      <div className="flex h-[143px] w-[739px] items-center justify-center">
-        <Loader2 className="size-5 animate-spin text-zinc-400 dark:text-zinc-600" />
-      </div>
+      <div className="h-[143px] w-[739px]" />
     </div>
   );
 }
-
-/**
- * Theme-aware fallback for the dynamic import below. The `loading` prop
- * can't access hooks directly, so we wrap it in a component.
- */
-function CalendarLoadingFallback() {
-  return <CalendarLoadingPlaceholder />;
-}
-
-const ActivityCalendar = dynamic(
-  () => import('react-activity-calendar').then((mod) => mod.default),
-  {
-    ssr: false,
-    // Show the skeleton while the calendar's JS chunk loads, so there's
-    // no empty gap between data arriving and the calendar rendering.
-    loading: () => <CalendarLoadingFallback />,
-  },
-);
 
 type ContributionItem = {
   date: string;
@@ -198,7 +178,7 @@ export default function Github() {
     <Container className="mt-13">
       <FadeIn>
         {isLoading ? (
-          <CalendarLoadingPlaceholder />
+          <CalendarPlaceholder />
         ) : hasError || contributions.length === 0 ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
