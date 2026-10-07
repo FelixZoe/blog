@@ -118,8 +118,7 @@ function ContributionSkeleton({
 }: {
   colorScheme: 'dark' | 'light';
 }) {
-  const emptyColor =
-    colorScheme === 'dark' ? 'rgb(22, 22, 24)' : 'rgb(235, 237, 240)';
+  const emptyColor = colorScheme === 'dark' ? '#000000' : '#ffffff';
   const months = [
     'Oct',
     'Nov',
