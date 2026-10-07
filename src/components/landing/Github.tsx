@@ -24,7 +24,12 @@ import {
 
 const ActivityCalendar = dynamic(
   () => import('react-activity-calendar').then((mod) => mod.default),
-  { ssr: false },
+  {
+    ssr: false,
+    // Show the skeleton while the calendar's JS chunk loads, so there's
+    // no empty gap between data arriving and the calendar rendering.
+    loading: () => <ContributionSkeleton colorScheme="dark" />,
+  },
 );
 
 type ContributionItem = {
