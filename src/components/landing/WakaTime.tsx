@@ -17,21 +17,26 @@ function formatDuration(totalSeconds: number): string {
   return m === 0 ? `${h}h` : `${h}h ${m}m`;
 }
 
-function CodeIcon({ className }: { className?: string }) {
+function PyCharmIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
       className={className}
       aria-hidden
     >
-      <path d="m16 18 6-6-6-6" />
-      <path d="m8 6-6 6 6 6" />
+      <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#0d0d0d" />
+      <text
+        x="12"
+        y="16.5"
+        textAnchor="middle"
+        fontSize="10.5"
+        fontWeight="700"
+        fontFamily="system-ui, -apple-system, sans-serif"
+        fill="#ffffff"
+      >
+        PC
+      </text>
     </svg>
   );
 }
@@ -80,7 +85,7 @@ export default function WakaTime() {
   return (
     <div className="mb-6">
       <p className="inline-flex max-w-full items-center gap-2 text-[12px] text-zinc-500 sm:text-[13px]">
-        <CodeIcon className="size-3.5 shrink-0 sm:size-4" />
+        <PyCharmIcon className="size-3.5 shrink-0 sm:size-4" />
         <span className="shrink-0 font-medium">
           {formatDuration(data.totalSeconds)} coded
         </span>
