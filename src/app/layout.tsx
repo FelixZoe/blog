@@ -9,7 +9,6 @@ import {
 } from '@/config/Meta';
 import { siteConfig } from '@/config/Site';
 import ReactLenis from 'lenis/react';
-import { ViewTransitions } from 'next-view-transitions';
 import Script from 'next/script';
 import { Toaster } from 'sonner';
 
@@ -33,40 +32,38 @@ export default function RootLayout({
     process.env.NODE_ENV === 'production' && umamiSrc && umamiWebsiteId;
 
   return (
-    <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
-        <head>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
+      <body className="bg-background font-hanken-grotesk antialiased">
+        {enableUmami && (
+          <Script
+            src={umamiSrc}
+            data-website-id={umamiWebsiteId}
+            strategy="afterInteractive"
           />
-        </head>
-        <body className="bg-background font-hanken-grotesk antialiased">
-          {enableUmami && (
-            <Script
-              src={umamiSrc}
-              data-website-id={umamiWebsiteId}
-              strategy="afterInteractive"
-            />
-          )}
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <CommandPaletteProvider>
-              <ReactLenis root>
-                <Navbar />
-                {children}
-                <ConditionalFooter />
-                <CommandPaletteRoot />
-                <Toaster richColors position="bottom-right" />
-              </ReactLenis>
-            </CommandPaletteProvider>
-          </ThemeProvider>
-        </body>
-      </html>
-    </ViewTransitions>
+        )}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <CommandPaletteProvider>
+            <ReactLenis root>
+              <Navbar />
+              {children}
+              <ConditionalFooter />
+              <CommandPaletteRoot />
+              <Toaster richColors position="bottom-right" />
+            </ReactLenis>
+          </CommandPaletteProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
