@@ -95,7 +95,7 @@ function ContributionBlock({
       <TooltipContent
         side="top"
         sideOffset={6}
-        className="animate-in fade-in-0 zoom-in-95 border-0 bg-[#1f2328] px-2.5 py-1.5 text-[11px] font-normal text-white shadow-lg duration-150"
+        className="animate-in fade-in-0 zoom-in-95 rounded-2xl border-0 bg-[#1f2328] px-2.5 py-1.5 text-[11px] font-normal text-white shadow-lg duration-150"
       >
         {formatContributionLabel(activity.date, activity.count)}
       </TooltipContent>
