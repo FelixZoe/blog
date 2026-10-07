@@ -70,7 +70,7 @@ export const featuredProjects: FeaturedProject[] = [
     title: 'TEMPO',
     description:
       'Local-first personal workspace: tasks, calendar, pomodoro, RSS and AI, with self-hosted sync.',
-    image: '/project/tempo.png',
+    image: '/project/tempo.jpg',
     live: 'https://github.com/FelixZoe/TEMPO',
     github: 'https://github.com/FelixZoe/TEMPO',
     technologies: [
@@ -91,7 +91,7 @@ export const featuredProjects: FeaturedProject[] = [
     title: 'Micro-Lab',
     description:
       'Micro-interaction Lab — Apple-style 60fps micro-interaction showcase.',
-    image: '/project/micro-lab.png',
+    image: '/project/micro-lab.jpg',
     live: 'https://github.com/FelixZoe/Micro-Lab',
     github: 'https://github.com/FelixZoe/Micro-Lab',
     technologies: [
