@@ -169,9 +169,11 @@ export default function Github() {
     <Container className="mt-13">
       <FadeIn>
         {isLoading ? (
-          // Reserve the calendar's space while loading so the page doesn't
-          // jump when the graph renders (avoids layout shift).
-          <div className="h-[143px]" aria-hidden />
+          // Reserve the calendar's exact space (739×143) while loading so
+          // the page doesn't jump when the graph renders (avoids layout shift).
+          <div className="overflow-x-auto" aria-hidden>
+            <div className="h-[143px] w-[739px]" />
+          </div>
         ) : hasError || contributions.length === 0 ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
