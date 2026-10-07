@@ -134,17 +134,7 @@ export function ProjectShowcaseCard({
   }, [pointerX, pointerY]);
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{
-        duration: 0.55,
-        delay: index * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="[perspective:1200px]"
-    >
+    <article className="[perspective:1200px]">
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -254,6 +244,6 @@ export function ProjectShowcaseCard({
           </Link>
         </div>
       </motion.div>
-    </motion.article>
+    </article>
   );
 }
