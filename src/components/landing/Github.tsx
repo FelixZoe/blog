@@ -103,6 +103,82 @@ function ContributionBlock({
   );
 }
 
+/**
+ * Skeleton that mirrors the contribution calendar's exact layout
+ * (739×143: month labels + 53×7 grid + footer) so loading feels like
+ * the graph fading in, not popping into empty space.
+ */
+function ContributionSkeleton({
+  colorScheme,
+}: {
+  colorScheme: 'dark' | 'light';
+}) {
+  const emptyColor =
+    colorScheme === 'dark' ? 'rgb(22, 22, 24)' : 'rgb(235, 237, 240)';
+  const months = [
+    'Oct',
+    'Nov',
+    'Dec',
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+  ];
+
+  return (
+    <div className="overflow-x-auto" aria-hidden>
+      <div className="w-[739px] animate-pulse">
+        {/* Month labels */}
+        <div className="flex pt-[2px] text-[12px] leading-none text-muted">
+          {months.map((month, i) => (
+            <span
+              key={month}
+              className="shrink-0"
+              style={{ width: i === 0 ? 52 : 62, marginRight: 2 }}
+            >
+              {month}
+            </span>
+          ))}
+        </div>
+        {/* Grid: 53 weeks × 7 days */}
+        <div className="mt-[8px] flex gap-[3px]">
+          {Array.from({ length: 53 }).map((_, week) => (
+            <div key={week} className="flex shrink-0 flex-col gap-[3px]">
+              {Array.from({ length: 7 }).map((_, day) => (
+                <div
+                  key={day}
+                  className="size-[11px] rounded-[2px]"
+                  style={{ backgroundColor: emptyColor }}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+        {/* Footer */}
+        <div className="mt-[8px] flex h-[18px] items-center justify-between text-[12px]">
+          <span className="invisible">0 Contributions · 2025–26</span>
+          <span className="invisible flex items-center gap-1">
+            Less
+            {[0, 1, 2, 3, 4].map((l) => (
+              <span
+                key={l}
+                className="size-[11px] rounded-[2px]"
+                style={{ backgroundColor: emptyColor }}
+              />
+            ))}
+            More
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Github() {
   const [contributions, setContributions] = useState<ContributionItem[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
@@ -169,11 +245,7 @@ export default function Github() {
     <Container className="mt-13">
       <FadeIn>
         {isLoading ? (
-          // Reserve the calendar's exact space (739×143) while loading so
-          // the page doesn't jump when the graph renders (avoids layout shift).
-          <div className="overflow-x-auto" aria-hidden>
-            <div className="h-[143px] w-[739px]" />
-          </div>
+          <ContributionSkeleton colorScheme={colorScheme} />
         ) : hasError || contributions.length === 0 ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
