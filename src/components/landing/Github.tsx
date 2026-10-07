@@ -169,9 +169,9 @@ export default function Github() {
     <Container className="mt-13">
       <FadeIn>
         {isLoading ? (
-          <div className="text-muted py-8 text-sm">
-            Loading contributions...
-          </div>
+          // Reserve the calendar's space while loading so the page doesn't
+          // jump when the graph renders (avoids layout shift).
+          <div className="h-[148px]" aria-hidden />
         ) : hasError || contributions.length === 0 ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
