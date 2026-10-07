@@ -113,10 +113,9 @@ export default function Github() {
   useEffect(() => {
     async function fetchContributions() {
       try {
-        const response = await fetch(
-          `${githubConfig.apiUrl}/${githubConfig.username}`,
-          { cache: 'no-store' },
-        );
+        const response = await fetch('/contributions.json', {
+          cache: 'no-store',
+        });
 
         if (!response.ok) {
           setHasError(true);
