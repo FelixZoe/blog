@@ -1,13 +1,7 @@
-'use client';
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
 import { siteConfig } from '@/config/Site';
 import Link from 'next/link';
+
+import HoverBubble from '../common/HoverBubble';
 
 type SocialLink = {
   label: string;
@@ -48,44 +42,32 @@ const socialLinks: SocialLink[] = [
 
 export default function SocialLinks() {
   return (
-    <TooltipProvider delayDuration={200}>
-      <div className="flex items-center gap-4">
-        {socialLinks.map((social) => (
-          <Tooltip key={social.label}>
-            <TooltipTrigger asChild>
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="text-icon transition-colors duration-150 hover:text-zinc-900 dark:hover:text-[#f0f0f0]"
-                href={social.href}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill={social.fill ? 'currentColor' : 'none'}
-                  stroke={social.fill ? undefined : 'currentColor'}
-                  strokeWidth={social.fill ? undefined : 2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {social.icon}
-                </svg>
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent
-              side="top"
-              sideOffset={8}
-              arrowClassName="fill-black dark:fill-zinc-900"
-              className="rounded-2xl pointer-events-none border-0 bg-black data-[state=closed]:animate-none! px-4 py-2 text-[13px] font-medium text-white shadow-lg dark:bg-zinc-900 dark:text-zinc-100"
-            >
-              {social.label}
-            </TooltipContent>
-          </Tooltip>
-        ))}
-      </div>
-    </TooltipProvider>
+    <div className="flex items-center gap-4">
+      {socialLinks.map((social) => (
+        <Link
+          key={social.label}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.label}
+          href={social.href}
+          className="group relative text-icon transition-colors duration-150 hover:text-zinc-900 dark:hover:text-[#f0f0f0]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill={social.fill ? 'currentColor' : 'none'}
+            stroke={social.fill ? undefined : 'currentColor'}
+            strokeWidth={social.fill ? undefined : 2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {social.icon}
+          </svg>
+          <HoverBubble label={social.label} />
+        </Link>
+      ))}
+    </div>
   );
 }
