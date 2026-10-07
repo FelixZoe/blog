@@ -76,9 +76,10 @@ export default function SocialLinks() {
               </Link>
             </TooltipTrigger>
             <TooltipContent
-              side="bottom"
-              sideOffset={6}
-              className="border border-zinc-200 bg-white px-2.5 py-1 text-[11px] font-medium text-zinc-700 shadow-sm dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200"
+              side="top"
+              sideOffset={8}
+              arrowClassName="fill-black dark:fill-zinc-900"
+              className="rounded-xl border-0 bg-black px-4 py-2 text-[13px] font-medium text-white shadow-lg dark:bg-zinc-900 dark:text-zinc-100"
             >
               {social.label}
             </TooltipContent>
