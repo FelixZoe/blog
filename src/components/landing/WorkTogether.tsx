@@ -3,7 +3,6 @@ import { siteConfig } from '@/config/Site';
 import Link from 'next/link';
 
 import Container from '../common/Container';
-import FadeIn from '../common/FadeIn';
 import FeaturedQuote from './FeaturedQuote';
 import VisitorCounter from './VisitorCounter';
 
@@ -59,12 +58,12 @@ const contactOptions = [
 export default function WorkTogether() {
   return (
     <Container className="mt-24 pb-12" id="contact">
-      <FadeIn>
+      
         <p className="section-kicker mb-8">Let&apos;s Work Together</p>
-      </FadeIn>
+      
 
       <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
-        <FadeIn delay={0.06}>
+        
           <div className="work-card flex h-full flex-col">
             <div className="mb-6 space-y-1">
               <h3 className="text-primary text-[15px] font-semibold sm:text-base">
@@ -149,9 +148,9 @@ export default function WorkTogether() {
               </div>
             </div>
           </div>
-        </FadeIn>
+        
 
-        <FadeIn delay={0.12}>
+        
           <div className="work-card flex h-full flex-col">
             <div className="mb-6 space-y-1">
               <h3 className="text-primary text-[15px] font-semibold sm:text-base">
@@ -164,10 +163,10 @@ export default function WorkTogether() {
             </div>
             <ContactForm variant="embedded" />
           </div>
-        </FadeIn>
+        
       </div>
 
-      <FadeIn delay={0.18} className="mt-10">
+      
         <div className="work-card flex flex-col items-stretch gap-6 sm:flex-row sm:items-center">
           <FeaturedQuote />
           <div
@@ -176,7 +175,7 @@ export default function WorkTogether() {
           />
           <VisitorCounter className="text-muted shrink-0 text-[12px] sm:text-[13px]" />
         </div>
-      </FadeIn>
+      
     </Container>
   );
 }
