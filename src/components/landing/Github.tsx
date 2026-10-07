@@ -22,13 +22,23 @@ import {
   TooltipTrigger,
 } from '../ui/tooltip';
 
+/**
+ * Theme-aware fallback for the dynamic import below. The `loading` prop
+ * can't access hooks directly, so we wrap it in a component.
+ */
+function CalendarLoadingFallback() {
+  const { resolvedTheme, theme } = useTheme();
+  const colorScheme = (resolvedTheme ?? theme) === 'dark' ? 'dark' : 'light';
+  return <ContributionSkeleton colorScheme={colorScheme} />;
+}
+
 const ActivityCalendar = dynamic(
   () => import('react-activity-calendar').then((mod) => mod.default),
   {
     ssr: false,
     // Show the skeleton while the calendar's JS chunk loads, so there's
     // no empty gap between data arriving and the calendar rendering.
-    loading: () => <ContributionSkeleton colorScheme="dark" />,
+    loading: () => <CalendarLoadingFallback />,
   },
 );
 
