@@ -13,7 +13,6 @@ import ActivityCalendar from 'react-activity-calendar';
 import type { Activity } from 'react-activity-calendar';
 
 import Container from '../common/Container';
-import FadeIn from '../common/FadeIn';
 import GithubIcon from '../svgs/Github';
 import {
   Tooltip,
@@ -163,7 +162,7 @@ export default function Github() {
 
   return (
     <Container className="mt-13">
-      <FadeIn>
+      
         {hasError ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
@@ -206,7 +205,7 @@ export default function Github() {
             </div>
           </TooltipProvider>
         )}
-      </FadeIn>
+      
     </Container>
   );
 }
