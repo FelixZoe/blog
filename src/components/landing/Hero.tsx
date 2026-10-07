@@ -117,15 +117,9 @@ export default function Hero() {
         </FadeIn>
       )}
 
-      {wakatimeConfig.enabled && (
-        <FadeIn delay={0.2}>
-          <WakaTime />
-        </FadeIn>
-      )}
+      {wakatimeConfig.enabled && <WakaTime />}
 
-      <FadeIn delay={0.26}>
-        <SocialLinks />
-      </FadeIn>
+      <SocialLinks />
     </Container>
   );
 }
