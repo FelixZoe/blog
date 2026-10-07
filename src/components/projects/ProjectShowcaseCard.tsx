@@ -167,7 +167,7 @@ export function ProjectShowcaseCard({
             style={{
               x: tiltEnabled ? imageX : 0,
               y: tiltEnabled ? imageY : 0,
-              scale: isHovered && tiltEnabled ? 1.06 : 1,
+              scale: 1,
               willChange: 'transform',
             }}
             className="absolute inset-0"
