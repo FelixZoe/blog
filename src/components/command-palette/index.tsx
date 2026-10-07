@@ -244,7 +244,7 @@ export function CommandPalette({
   );
 }
 
-function SearchIcon({ size = 14 }: { size?: number }) {
+function SearchIcon({ size = 18 }: { size?: number }) {
   return (
     <svg
       width={size}
@@ -273,7 +273,7 @@ export function CommandPaletteMobileSearchTrigger() {
       className="text-muted hover:text-primary flex size-9 items-center justify-center rounded-md border border-zinc-200 transition-colors sm:hidden dark:border-zinc-800"
       aria-label="Open search"
     >
-      <SearchIcon size={16} />
+      <SearchIcon size={18} />
     </button>
   );
 }
