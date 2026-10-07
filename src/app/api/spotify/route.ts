@@ -82,6 +82,65 @@ async function getRecentlyPlayedTrack(
   return formatTrack(track, false, 0);
 }
 
+type LastFmImage = { '#text': string; size: string };
+type LastFmTrack = {
+  name: string;
+  artist: { '#text': string };
+  album: { '#text': string };
+  image: LastFmImage[];
+  url: string;
+  date?: { uts: string };
+  '@attr'?: { nowplaying: string };
+};
+
+// Last.fm fallback for Spotify Free accounts: Spotify's Web API returns 403
+// on player endpoints without Premium, but Last.fm scrobbling works on Free.
+async function getLastFmTrack(): Promise<ReturnType<typeof formatTrack> | null> {
+  const apiKey = process.env.LASTFM_API_KEY?.trim();
+  const username = process.env.LASTFM_USERNAME?.trim();
+  if (!apiKey || !username) return null;
+
+  try {
+    const params = new URLSearchParams({
+      method: 'user.getrecenttracks',
+      user: username,
+      api_key: apiKey,
+      format: 'json',
+      limit: '2',
+    });
+    const res = await fetch(`https://ws.audioscrobbler.com/2.0/?${params}`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) return null;
+
+    const data = await res.json();
+    const raw = data?.recenttracks?.track;
+    const tracks: LastFmTrack[] = Array.isArray(raw) ? raw : raw ? [raw] : [];
+    const track = tracks[0];
+    if (!track?.name) return null;
+
+    const images = Array.isArray(track.image) ? track.image : [];
+    const pick = (size: string) => images.find((i) => i.size === size)?.['#text'];
+    const albumImageUrl =
+      pick('extralarge') || pick('large') || pick('medium') || pick('small') || '';
+
+    const isPlaying = track['@attr']?.nowplaying === 'true';
+    return {
+      playing: true,
+      isPlaying,
+      title: track.name,
+      artist: track.artist?.['#text'] ?? '',
+      albumImageUrl,
+      songUrl: track.url ?? '',
+      progress: 0,
+      duration: 0,
+      label: isPlaying ? 'Now Playing' : 'Last Played',
+    };
+  } catch {
+    return null;
+  }
+}
+
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
@@ -127,6 +186,10 @@ export async function GET() {
   // currently-playing is unavailable (e.g. 403 without Premium)
   const recentTrack = await getRecentlyPlayedTrack(accessToken);
   if (recentTrack) return trackResponse(recentTrack);
+
+  // Last.fm fallback (works with Spotify Free via scrobbling)
+  const lastFmTrack = await getLastFmTrack();
+  if (lastFmTrack) return trackResponse(lastFmTrack);
 
   return idleResponse('no_data');
 }
