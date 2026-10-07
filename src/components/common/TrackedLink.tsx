@@ -2,7 +2,7 @@
 
 import { useUmami } from '@/hooks/use-umami';
 import type { AnalyticsEvent } from '@/types/analytics';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import * as React from 'react';
 
 type LinkProps = React.ComponentProps<typeof Link>;
