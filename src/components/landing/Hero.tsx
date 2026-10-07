@@ -35,7 +35,7 @@ export default function Hero() {
         </div>
       </FadeIn>
 
-      <FadeIn delay={0.08}>
+      <FadeIn>
         <div className="mt-10 mb-6 flex flex-wrap items-start gap-x-6 gap-y-4 sm:gap-x-8">
           <div className="space-y-1">
             <div className="section-kicker">Location</div>
@@ -105,14 +105,14 @@ export default function Hero() {
         </div>
       </FadeIn>
 
-      <FadeIn delay={0.14}>
+      <FadeIn>
         <p className="text-secondary mb-8 text-[13.5px] leading-[1.85] font-[450] sm:text-[15px]">
           <BioText text={siteConfig.bio} />
         </p>
       </FadeIn>
 
       {spotifyConfig.enabled && (
-        <FadeIn delay={0.2}>
+        <FadeIn>
           <SpotifyNowPlaying />
         </FadeIn>
       )}
