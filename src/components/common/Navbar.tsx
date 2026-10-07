@@ -34,7 +34,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`relative text-sm transition-colors after:absolute after:-bottom-px after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:content-[''] md:hover:after:w-full ${
+                  className={`relative px-2 py-3 text-sm transition-colors after:absolute after:-bottom-px after:left-2 after:h-px after:w-0 after:bg-current after:transition-all after:content-[''] md:hover:after:w-[calc(100%-1rem)] ${
                     active
                       ? 'text-[#111111] dark:text-[#e0e0e0]'
                       : 'text-[#555555] hover:text-[#111111] dark:text-[#a0a0a0] dark:hover:text-[#e0e0e0]'
