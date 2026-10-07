@@ -4,7 +4,6 @@ import { wakatimeConfig } from '@/config/Wakatime';
 import Image from 'next/image';
 
 import Container from '../common/Container';
-import FadeIn from '../common/FadeIn';
 import BioText from './BioText';
 import RotatingRoles from './RotatingRoles';
 import SocialLinks from './SocialLinks';
@@ -14,7 +13,7 @@ import WakaTime from './WakaTime';
 export default function Hero() {
   return (
     <Container id="about">
-      <FadeIn>
+      
         <div className="mb-7 flex items-center gap-4">
           <Image
             src={siteConfig.avatar}
@@ -33,9 +32,9 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </FadeIn>
+      
 
-      <FadeIn>
+      
         <div className="mt-10 mb-6 flex flex-wrap items-start gap-x-6 gap-y-4 sm:gap-x-8">
           <div className="space-y-1">
             <div className="section-kicker">Location</div>
@@ -103,18 +102,18 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </FadeIn>
+      
 
-      <FadeIn>
+      
         <p className="text-secondary mb-8 text-[13.5px] leading-[1.85] font-[450] sm:text-[15px]">
           <BioText text={siteConfig.bio} />
         </p>
-      </FadeIn>
+      
 
       {spotifyConfig.enabled && (
-        <FadeIn>
+        
           <SpotifyNowPlaying />
-        </FadeIn>
+        
       )}
 
       {wakatimeConfig.enabled && <WakaTime />}
