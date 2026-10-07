@@ -94,19 +94,19 @@ export function ProjectShowcaseCard({
   const pointerY = useMotionValue(0);
 
   const rotateX = useSpring(
-    useTransform(pointerY, [-0.5, 0.5], [7, -7]),
+    useTransform(pointerY, [-0.5, 0.5], [3, -3]),
     TILT_SPRING,
   );
   const rotateY = useSpring(
-    useTransform(pointerX, [-0.5, 0.5], [-7, 7]),
+    useTransform(pointerX, [-0.5, 0.5], [-3, 3]),
     TILT_SPRING,
   );
   const imageX = useSpring(
-    useTransform(pointerX, [-0.5, 0.5], [-10, 10]),
+    useTransform(pointerX, [-0.5, 0.5], [-4, 4]),
     TILT_SPRING,
   );
   const imageY = useSpring(
-    useTransform(pointerY, [-0.5, 0.5], [-8, 8]),
+    useTransform(pointerY, [-0.5, 0.5], [-3, 3]),
     TILT_SPRING,
   );
   const scale = useSpring(isHovered && tiltEnabled ? 1.02 : 1, TILT_SPRING);
