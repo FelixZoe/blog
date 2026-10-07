@@ -37,8 +37,11 @@ function TooltipContent({
   className,
   sideOffset = 0,
   children,
+  arrowClassName,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Content>) {
+}: React.ComponentProps<typeof TooltipPrimitive.Content> & {
+  arrowClassName?: string;
+}) {
   return (
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content
@@ -51,6 +54,9 @@ function TooltipContent({
         {...props}
       >
         {children}
+        {arrowClassName !== undefined && (
+          <TooltipPrimitive.Arrow className={cn('size-2', arrowClassName)} />
+        )}
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
   );
