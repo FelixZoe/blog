@@ -171,7 +171,7 @@ export default function Github() {
         {isLoading ? (
           // Reserve the calendar's space while loading so the page doesn't
           // jump when the graph renders (avoids layout shift).
-          <div className="h-[148px]" aria-hidden />
+          <div className="h-[143px]" aria-hidden />
         ) : hasError || contributions.length === 0 ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
