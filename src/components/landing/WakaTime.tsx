@@ -57,7 +57,20 @@ export default function WakaTime() {
     return () => clearInterval(interval);
   }, [fetchStats]);
 
-  if (!loaded || !data) return null;
+  if (!loaded) {
+    // Reserve the row's space while loading so the page doesn't jump
+    // when the stats arrive (avoids layout shift).
+    return (
+      <div className="mb-6" aria-hidden>
+        <p className="invisible inline-flex max-w-full items-center gap-2 text-[12px] sm:text-[13px]">
+          <span className="size-3.5 shrink-0 sm:size-4" />
+          <span>0m coded in the last 7 days</span>
+        </p>
+      </div>
+    );
+  }
+
+  if (!data) return null;
 
   return (
     <div className="mb-6">
