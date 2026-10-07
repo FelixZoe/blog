@@ -3,18 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '../common/Container';
-import FadeIn from '../common/FadeIn';
 import TechIconRow from '../common/TechIconRow';
 
 export default function FeaturedProjects() {
   return (
     <Container className="mt-16">
-      <FadeIn>
+      
         <div className="section-kicker mb-6">Featured Projects</div>
-      </FadeIn>
+      
       <div className="grid gap-6 sm:grid-cols-2">
         {featuredProjects.map((project, index) => (
-          <FadeIn key={project.title} delay={index * 0.08}>
+          
             <article className="siddz-card group overflow-hidden transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
@@ -82,7 +81,7 @@ export default function FeaturedProjects() {
                 <TechIconRow technologies={project.technologies} />
               </div>
             </article>
-          </FadeIn>
+          
         ))}
       </div>
     </Container>
