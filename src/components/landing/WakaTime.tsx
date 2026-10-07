@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 
 type WakaTimeStats = {
@@ -15,30 +16,6 @@ function formatDuration(totalSeconds: number): string {
   const m = Math.round((totalSeconds % 3600) / 60);
   if (h <= 0) return `${m}m`;
   return m === 0 ? `${h}h` : `${h}h ${m}m`;
-}
-
-function PyCharmIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden
-    >
-      <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#0d0d0d" />
-      <text
-        x="12"
-        y="16.5"
-        textAnchor="middle"
-        fontSize="10.5"
-        fontWeight="700"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fill="#ffffff"
-      >
-        PC
-      </text>
-    </svg>
-  );
 }
 
 export default function WakaTime() {
@@ -85,7 +62,13 @@ export default function WakaTime() {
   return (
     <div className="mb-6">
       <p className="inline-flex max-w-full items-center gap-2 text-[12px] text-zinc-500 sm:text-[13px]">
-        <PyCharmIcon className="size-3.5 shrink-0 sm:size-4" />
+        <Image
+          src="/icons/pycharm.png"
+          alt="PyCharm"
+          width={14}
+          height={14}
+          className="size-3.5 shrink-0 rounded-[3px] sm:size-4"
+        />
         <span className="shrink-0 font-medium">
           {formatDuration(data.totalSeconds)} coded
         </span>
