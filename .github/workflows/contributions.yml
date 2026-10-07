@@ -1,0 +1,52 @@
+name: Update GitHub contributions
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch contributions via GraphQL
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql -f query='
+            query($login: String!) {
+              user(login: $login) {
+                contributionsCollection {
+                  contributionCalendar {
+                    totalContributions
+                    weeks { contributionDays { date contributionCount } }
+                  }
+                }
+              }
+            }' -f login=FelixZoe --jq '
+            .data.user.contributionsCollection.contributionCalendar |
+            {
+              total: {contributions: .totalContributions},
+              contributions: [.weeks[].contributionDays[] | {
+                date: .date,
+                count: .contributionCount,
+                level: (if .contributionCount == 0 then 0
+                        elif .contributionCount <= 3 then 1
+                        elif .contributionCount <= 6 then 2
+                        elif .contributionCount <= 9 then 3
+                        else 4 end)
+              }]
+            }' > public/contributions.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/contributions.json
+          git diff --staged --quiet || git commit -m "chore: update contributions data"
+          git push
