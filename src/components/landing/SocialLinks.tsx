@@ -79,7 +79,7 @@ export default function SocialLinks() {
               side="top"
               sideOffset={8}
               arrowClassName="fill-black dark:fill-zinc-900"
-              className="rounded-2xl border-0 bg-black px-4 py-2 text-[13px] font-medium text-white shadow-lg dark:bg-zinc-900 dark:text-zinc-100"
+              className="rounded-2xl pointer-events-none border-0 bg-black px-4 py-2 text-[13px] font-medium text-white shadow-lg dark:bg-zinc-900 dark:text-zinc-100"
             >
               {social.label}
             </TooltipContent>
