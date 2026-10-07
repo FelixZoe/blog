@@ -23,17 +23,6 @@ import {
 } from '../ui/tooltip';
 
 /**
- * Invisible placeholder that reserves the calendar's exact space (739×143)
- * while loading. No spinner — the data loads in milliseconds, so this
- * feels instant like a static site.
- */
-function CalendarPlaceholder() {
-  return (
-    <div className="overflow-x-auto" aria-hidden>
-      <div className="h-[143px] w-[739px]" />
-    </div>
-  );
-}
 
 type ContributionItem = {
   date: string;
@@ -115,7 +104,6 @@ function ContributionBlock({
 export default function Github() {
   const [contributions, setContributions] = useState<ContributionItem[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const { theme, resolvedTheme } = useTheme();
 
@@ -165,7 +153,6 @@ export default function Github() {
       } catch {
         setHasError(true);
       } finally {
-        setIsLoading(false);
       }
     }
 
@@ -177,9 +164,7 @@ export default function Github() {
   return (
     <Container className="mt-13">
       <FadeIn>
-        {isLoading ? (
-          <CalendarPlaceholder />
-        ) : hasError || contributions.length === 0 ? (
+        {hasError ? (
           <Link
             href={`https://github.com/${githubConfig.username}`}
             target="_blank"
@@ -189,6 +174,8 @@ export default function Github() {
             View GitHub profile
           </Link>
         ) : (
+          // Always render the calendar, even with empty data (shows "0 CONTRIBUTIONS").
+          // Data fills in silently when loaded — no spinner, no skeleton, like siddz.com.
           <TooltipProvider delayDuration={0}>
             <div className="overflow-x-auto">
               <ActivityCalendar
