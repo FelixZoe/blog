@@ -1,5 +1,6 @@
 import { siteConfig } from '@/config/Site';
 import { spotifyConfig } from '@/config/Spotify';
+import { wakatimeConfig } from '@/config/Wakatime';
 import Image from 'next/image';
 
 import Container from '../common/Container';
@@ -8,6 +9,7 @@ import BioText from './BioText';
 import RotatingRoles from './RotatingRoles';
 import SocialLinks from './SocialLinks';
 import SpotifyNowPlaying from './SpotifyNowPlaying';
+import WakaTime from './WakaTime';
 
 export default function Hero() {
   return (
@@ -112,6 +114,12 @@ export default function Hero() {
       {spotifyConfig.enabled && (
         <FadeIn delay={0.2}>
           <SpotifyNowPlaying />
+        </FadeIn>
+      )}
+
+      {wakatimeConfig.enabled && (
+        <FadeIn delay={0.2}>
+          <WakaTime />
         </FadeIn>
       )}
 
