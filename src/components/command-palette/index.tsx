@@ -270,7 +270,7 @@ export function CommandPaletteMobileSearchTrigger() {
     <button
       type="button"
       onClick={openPalette}
-      className="text-muted hover:text-primary flex size-9 items-center justify-center rounded-md border border-zinc-200 transition-colors sm:hidden dark:border-zinc-800"
+      className="text-muted hover:text-primary flex size-10 items-center justify-center rounded-full transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
       aria-label="Open search"
     >
       <SearchIcon size={18} />
@@ -285,7 +285,7 @@ export function CommandPaletteSearchTrigger() {
     <button
       type="button"
       onClick={openPalette}
-      className="text-muted hover:text-primary hidden items-center gap-2 rounded-md border border-zinc-200 px-3 py-1.5 text-sm transition-colors sm:flex dark:border-zinc-800"
+      className="text-muted hover:text-primary hidden items-center gap-2 rounded-full px-3 py-2 text-sm transition-colors hover:bg-zinc-100 sm:flex dark:hover:bg-zinc-800"
       aria-label="Open command palette"
     >
       <SearchIcon />
