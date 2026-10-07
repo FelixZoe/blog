@@ -7,7 +7,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import Moon from '../svgs/Moon';
 import Sun from '../svgs/Sun';
-import { Button } from '../ui/button';
 
 export const useThemeToggle = ({
   variant = 'circle',
@@ -160,12 +159,10 @@ export const ThemeToggleButton = ({
   });
 
   return (
-    <Button
+    <button
       type="button"
-      variant="ghost"
-      size="icon"
       className={cn(
-        'size-10 cursor-pointer rounded-full border-0 bg-transparent p-0 shadow-none transition-all duration-300 [box-shadow:none] hover:bg-zinc-100 hover:[box-shadow:none] active:scale-95 dark:hover:bg-zinc-800',
+        'flex size-10 cursor-pointer items-center justify-center rounded-full border-0 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 active:scale-95 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100',
         className,
       )}
       onClick={toggleTheme}
@@ -173,7 +170,7 @@ export const ThemeToggleButton = ({
     >
       <span className="sr-only">Toggle theme</span>
       {isDark ? <Moon className="size-[18px]" /> : <Sun className="size-[18px]" />}
-    </Button>
+    </button>
   );
 };
 
