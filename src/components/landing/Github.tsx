@@ -1,1 +1,230 @@
-J3VzZSBjbGllbnQnOwoKaW1wb3J0IHsgZ2l0aHViQ29uZmlnIH0gZnJvbSAnQC9jb25maWcvR2l0aHViJzsKaW1wb3J0IHsgdXNlVGhlbWUgfSBmcm9tICduZXh0LXRoZW1lcyc7CmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluayc7CmltcG9ydCBSZWFjdCwgewogIHR5cGUgUmVhY3RFbGVtZW50LAogIGNsb25lRWxlbWVudCwKICB1c2VFZmZlY3QsCiAgdXNlU3RhdGUsCn0gZnJvbSAncmVhY3QnOwppbXBvcnQgQWN0aXZpdHlDYWxlbmRhciBmcm9tICdyZWFjdC1hY3Rpdml0eS1jYWxlbmRhcic7CmltcG9ydCB0eXBlIHsgQWN0aXZpdHkgfSBmcm9tICdyZWFjdC1hY3Rpdml0eS1jYWxlbmRhcic7CgppbXBvcnQgQ29udGFpbmVyIGZyb20gJy4uL2NvbW1vbi9Db250YWluZXInOwppbXBvcnQgR2l0aHViSWNvbiBmcm9tICcuLi9zdmdzL0dpdGh1Yic7CmltcG9ydCB7CiAgVG9vbHRpcCwKICBUb29sdGlwQ29udGVudCwKICBUb29sdGlwUHJvdmlkZXIsCiAgVG9vbHRpcFRyaWdnZXIsCn0gZnJvbSAnLi4vdWkvdG9vbHRpcCc7Cgp0eXBlIENvbnRyaWJ1dGlvbkl0ZW0gPSB7CiAgZGF0ZTogc3RyaW5nOwogIGNvdW50OiBudW1iZXI7CiAgbGV2ZWw6IDAgfCAxIHwgMiB8IDMgfCA0Owp9OwoKdHlwZSBBcGlDb250cmlidXRpb24gPSB7CiAgZGF0ZTogc3RyaW5nOwogIGNvdW50OiBudW1iZXI7CiAgbGV2ZWw6IG51bWJlcjsKfTsKCnR5cGUgQXBpUmVzcG9uc2UgPSB7CiAgdG90YWw/OiBSZWNvcmQ8c3RyaW5nLCBudW1iZXI+IHwgbnVtYmVyOwogIGNvbnRyaWJ1dGlvbnM/OiBBcGlDb250cmlidXRpb25bXTsKfTsKCmZ1bmN0aW9uIGZpbHRlckxhc3RZZWFyKGNvbnRyaWJ1dGlvbnM6IENvbnRyaWJ1dGlvbkl0ZW1bXSk6IENvbnRyaWJ1dGlvbkl0ZW1bXSB7CiAgY29uc3Qgb25lWWVhckFnbyA9IG5ldyBEYXRlKCk7CiAgb25lWWVhckFnby5zZXRGdWxsWWVhcihvbmVZZWFyQWdvLmdldEZ1bGxZZWFyKCkgLSAxKTsKICBvbmVZZWFyQWdvLnNldEhvdXJzKDAsIDAsIDAsIDApOwoKICByZXR1cm4gY29udHJpYnV0aW9ucwogICAgLmZpbHRlcigoaXRlbSkgPT4gbmV3IERhdGUoYCR7aXRlbS5kYXRlfVQwMDowMDowMGApID49IG9uZVllYXJBZ28pCiAgICAuc29ydCgoYSwgYikgPT4gYS5kYXRlLmxvY2FsZUNvbXBhcmUoYi5kYXRlKSk7Cn0KCi8qKgogKiBaZXJvLWZpbGxlZCBkYXRhc2V0IGZvciB0aGUgbGFzdCAzNjUgZGF5cy4KICogTGV0cyB0aGUgY2FsZW5kYXIgcmVuZGVyIGl0cyBmdWxsIHN0cnVjdHVyZSBpbW1lZGlhdGVseSAoIjAgQ09OVFJJQlVUSU9OUyIKICogemVybyBzdGF0ZSwgU1NSLXNhZmUpIGluc3RlYWQgb2YgdGhyb3dpbmcgb24gZW1wdHkgZGF0YTsgdGhlIHJlYWwgZGF0YQogKiBzaWxlbnRseSByZXBsYWNlcyBpdCB3aGVuIHRoZSBmZXRjaCByZXNvbHZlcyDigJQgbm8gc3Bpbm5lciwgbm8gc2tlbGV0b24uCiAqLwpmdW5jdGlvbiBnZW5lcmF0ZVplcm9ZZWFyKCk6IENvbnRyaWJ1dGlvbkl0ZW1bXSB7CiAgY29uc3QgZGF5czogQ29udHJpYnV0aW9uSXRlbVtdID0gW107CiAgY29uc3QgdG9kYXkgPSBuZXcgRGF0ZSgpOwogIHRvZGF5LnNldEhvdXJzKDAsIDAsIDAsIDApOwogIGZvciAobGV0IGkgPSAzNjQ7IGkgPj0gMDsgaS0tKSB7CiAgICBjb25zdCBkID0gbmV3IERhdGUodG9kYXkpOwogICAgZC5zZXREYXRlKGQuZ2V0RGF0ZSgpIC0gaSk7CiAgICBjb25zdCB5eXl5ID0gZC5nZXRGdWxsWWVhcigpOwogICAgY29uc3QgbW0gPSBTdHJpbmcoZC5nZXRNb250aCgpICsgMSkucGFkU3RhcnQoMiwgJzAnKTsKICAgIGNvbnN0IGRkID0gU3RyaW5nKGQuZ2V0RGF0ZSgpKS5wYWRTdGFydCgyLCAnMCcpOwogICAgZGF5cy5wdXNoKHsgZGF0ZTogYCR7eXl5eX0tJHttbX0tJHtkZH1gLCBjb3VudDogMCwgbGV2ZWw6IDAgfSk7CiAgfQogIHJldHVybiBkYXlzOwp9CgpmdW5jdGlvbiB0b0xldmVsKGxldmVsOiBudW1iZXIpOiBDb250cmlidXRpb25JdGVtWydsZXZlbCddIHsKICBpZiAobGV2ZWwgPD0gMCkgcmV0dXJuIDA7CiAgaWYgKGxldmVsID09PSAxKSByZXR1cm4gMTsKICBpZiAobGV2ZWwgPT09IDIpIHJldHVybiAyOwogIGlmIChsZXZlbCA9PT0gMykgcmV0dXJuIDM7CiAgcmV0dXJuIDQ7Cn0KCmZ1bmN0aW9uIGZvcm1hdENvbnRyaWJ1dGlvbkxhYmVsKGRhdGU6IHN0cmluZywgY291bnQ6IG51bWJlcikgewogIGNvbnN0IGZvcm1hdHRlZCA9IG5ldyBEYXRlKGAke2RhdGV9VDAwOjAwOjAwYCkudG9Mb2NhbGVEYXRlU3RyaW5nKCdlbi1VUycsIHsKICAgIG1vbnRoOiAnc2hvcnQnLAogICAgZGF5OiAnbnVtZXJpYycsCiAgICB5ZWFyOiAnbnVtZXJpYycsCiAgfSk7CgogIGlmIChjb3VudCA9PT0gMCkgcmV0dXJuIGBObyBjb250cmlidXRpb25zIG9uICR7Zm9ybWF0dGVkfWA7CgogIGNvbnN0IHdvcmQgPSBjb3VudCA9PT0gMSA/ICdjb250cmlidXRpb24nIDogJ2NvbnRyaWJ1dGlvbnMnOwogIHJldHVybiBgJHtjb3VudH0gJHt3b3JkfSBvbiAke2Zvcm1hdHRlZH1gOwp9CgpmdW5jdGlvbiBDb250cmlidXRpb25CbG9jayh7CiAgYmxvY2ssCiAgYWN0aXZpdHksCn06IHsKICBibG9jazogUmVhY3RFbGVtZW50PHsgc3R5bGU/OiBSZWFjdC5DU1NQcm9wZXJ0aWVzIH0+OwogIGFjdGl2aXR5OiBBY3Rpdml0eTsKfSkgewogIHJldHVybiAoCiAgICA8VG9vbHRpcCBkZWxheUR1cmF0aW9uPXswfT4KICAgICAgPFRvb2x0aXBUcmlnZ2VyIGFzQ2hpbGQ+CiAgICAgICAge2Nsb25lRWxlbWVudChibG9jaywgewogICAgICAgICAgc3R5bGU6IHsKICAgICAgICAgICAgLi4uYmxvY2sucHJvcHMuc3R5bGUsCiAgICAgICAgICAgIGN1cnNvcjogJ3BvaW50ZXInLAogICAgICAgICAgfSwKICAgICAgICB9KX0KICAgICAgPC9Ub29sdGlwVHJpZ2dlcj4KICAgICAgPFRvb2x0aXBDb250ZW50CiAgICAgICAgc2lkZT0idG9wIgogICAgICAgIHNpZGVPZmZzZXQ9ezZ9CiAgICAgICAgY2xhc3NOYW1lPSJhbmltYXRlLWluIGZhZGUtaW4tMCB6b29tLWluLTk1IHJvdW5kZWQtMnhsIGJvcmRlci0wIGJnLVsjMWYyMzI4XSBweC0yLjUgcHktMS41IHRleHQtWzExcHhdIGZvbnQtbm9ybWFsIHRleHQtd2hpdGUgc2hhZG93LWxnIGR1cmF0aW9uLTE1MCIKICAgICAgPgogICAgICAgIHtmb3JtYXRDb250cmlidXRpb25MYWJlbChhY3Rpdml0eS5kYXRlLCBhY3Rpdml0eS5jb3VudCl9CiAgICAgIDwvVG9vbHRpcENvbnRlbnQ+CiAgICA8L1Rvb2x0aXA+CiAgKTsKfQoKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEdpdGh1YigpIHsKICBjb25zdCBbY29udHJpYnV0aW9ucywgc2V0Q29udHJpYnV0aW9uc10gPQogICAgdXNlU3RhdGU8Q29udHJpYnV0aW9uSXRlbVtdPihnZW5lcmF0ZVplcm9ZZWFyKTsKICBjb25zdCBbdG90YWxDb250cmlidXRpb25zLCBzZXRUb3RhbENvbnRyaWJ1dGlvbnNdID0gdXNlU3RhdGUoMCk7CiAgY29uc3QgW2hhc0Vycm9yLCBzZXRIYXNFcnJvcl0gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgeyB0aGVtZSwgcmVzb2x2ZWRUaGVtZSB9ID0gdXNlVGhlbWUoKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGFzeW5jIGZ1bmN0aW9uIGZldGNoQ29udHJpYnV0aW9ucygpIHsKICAgICAgdHJ5IHsKICAgICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKCcvY29udHJpYnV0aW9ucy5qc29uJywgewogICAgICAgICAgY2FjaGU6ICduby1zdG9yZScsCiAgICAgICAgfSk7CgogICAgICAgIGlmICghcmVzcG9uc2Uub2spIHsKICAgICAgICAgIHNldEhhc0Vycm9yKHRydWUpOwogICAgICAgICAgcmV0dXJuOwogICAgICAgIH0KCiAgICAgICAgY29uc3QgZGF0YTogQXBpUmVzcG9uc2UgPSBhd2FpdCByZXNwb25zZS5qc29uKCk7CgogICAgICAgIGlmICghZGF0YT8uY29udHJpYnV0aW9ucyB8fCAhQXJyYXkuaXNBcnJheShkYXRhLmNvbnRyaWJ1dGlvbnMpKSB7CiAgICAgICAgICBzZXRIYXNFcnJvcih0cnVlKTsKICAgICAgICAgIHJldHVybjsKICAgICAgICB9CgogICAgICAgIGNvbnN0IHZhbGlkQ29udHJpYnV0aW9ucyA9IGRhdGEuY29udHJpYnV0aW9ucwogICAgICAgICAgLmZpbHRlcigKICAgICAgICAgICAgKGl0ZW0pOiBpdGVtIGlzIEFwaUNvbnRyaWJ1dGlvbiA9PgogICAgICAgICAgICAgIHR5cGVvZiBpdGVtID09PSAnb2JqZWN0JyAmJgogICAgICAgICAgICAgIGl0ZW0gIT09IG51bGwgJiYKICAgICAgICAgICAgICB0eXBlb2YgaXRlbS5kYXRlID09PSAnc3RyaW5nJyAmJgogICAgICAgICAgICAgIHR5cGVvZiBpdGVtLmNvdW50ID09PSAnbnVtYmVyJywKICAgICAgICAgICkKICAgICAgICAgIC5tYXAoKGl0ZW0pID0+ICh7CiAgICAgICAgICAgIGRhdGU6IGl0ZW0uZGF0ZSwKICAgICAgICAgICAgY291bnQ6IGl0ZW0uY291bnQsCiAgICAgICAgICAgIGxldmVsOiB0b0xldmVsKE51bWJlcihpdGVtLmxldmVsKSB8fCAwKSwKICAgICAgICAgIH0pKTsKCiAgICAgICAgaWYgKHZhbGlkQ29udHJpYnV0aW9ucy5sZW5ndGggPT09IDApIHsKICAgICAgICAgIHNldEhhc0Vycm9yKHRydWUpOwogICAgICAgICAgcmV0dXJuOwogICAgICAgIH0KCiAgICAgICAgY29uc3QgbGFzdFllYXIgPSBmaWx0ZXJMYXN0WWVhcih2YWxpZENvbnRyaWJ1dGlvbnMpOwogICAgICAgIGNvbnN0IHRvdGFsID0gbGFzdFllYXIucmVkdWNlKChzdW0sIGl0ZW0pID0+IHN1bSArIGl0ZW0uY291bnQsIDApOwoKICAgICAgICBzZXRUb3RhbENvbnRyaWJ1dGlvbnModG90YWwpOwogICAgICAgIHNldENvbnRyaWJ1dGlvbnMobGFzdFllYXIpOwogICAgICB9IGNhdGNoIHsKICAgICAgICBzZXRIYXNFcnJvcih0cnVlKTsKICAgICAgfQogICAgfQoKICAgIGZldGNoQ29udHJpYnV0aW9ucygpOwogIH0sIFtdKTsKCiAgY29uc3QgY29sb3JTY2hlbWUgPSAocmVzb2x2ZWRUaGVtZSA/PyB0aGVtZSkgPT09ICdkYXJrJyA/ICdkYXJrJyA6ICdsaWdodCc7CgogIHJldHVybiAoCiAgICA8Q29udGFpbmVyIGNsYXNzTmFtZT0ibXQtMTMiPgogICAgICAKICAgICAgICB7aGFzRXJyb3IgPyAoCiAgICAgICAgICA8TGluawogICAgICAgICAgICBocmVmPXtgaHR0cHM6Ly9naXRodWIuY29tLyR7Z2l0aHViQ29uZmlnLnVzZXJuYW1lfWB9CiAgICAgICAgICAgIHRhcmdldD0iX2JsYW5rIgogICAgICAgICAgICBjbGFzc05hbWU9InRleHQtbXV0ZWQgaG92ZXI6dGV4dC1wcmltYXJ5IGlubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiB0ZXh0LXNtIHRyYW5zaXRpb24tY29sb3JzIgogICAgICAgICAgPgogICAgICAgICAgICA8R2l0aHViSWNvbiBjbGFzc05hbWU9InNpemUtNCIgLz4KICAgICAgICAgICAgVmlldyBHaXRIdWIgcHJvZmlsZQogICAgICAgICAgPC9MaW5rPgogICAgICAgICkgOiAoCiAgICAgICAgICAvLyBBbHdheXMgcmVuZGVyIHRoZSBjYWxlbmRhciwgZXZlbiB3aXRoIGVtcHR5IGRhdGEgKHNob3dzICIwIENPTlRSSUJVVElPTlMiKS4KICAgICAgICAgIC8vIERhdGEgZmlsbHMgaW4gc2lsZW50bHkgd2hlbiBsb2FkZWQg4oCUIG5vIHNwaW5uZXIsIG5vIHNrZWxldG9uLCBsaWtlIHNpZGR6LmNvbS4KICAgICAgICAgIDxUb29sdGlwUHJvdmlkZXIgZGVsYXlEdXJhdGlvbj17MH0+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJvdmVyZmxvdy14LWF1dG8iPgogICAgICAgICAgICAgIDxBY3Rpdml0eUNhbGVuZGFyCiAgICAgICAgICAgICAgICBkYXRhPXtjb250cmlidXRpb25zfQogICAgICAgICAgICAgICAgYmxvY2tTaXplPXsxMX0KICAgICAgICAgICAgICAgIGJsb2NrTWFyZ2luPXszfQogICAgICAgICAgICAgICAgZm9udFNpemU9ezEyfQogICAgICAgICAgICAgICAgY29sb3JTY2hlbWU9e2NvbG9yU2NoZW1lfQogICAgICAgICAgICAgICAgbWF4TGV2ZWw9ezR9CiAgICAgICAgICAgICAgICBoaWRlVG90YWxDb3VudD17ZmFsc2V9CiAgICAgICAgICAgICAgICB0aGVtZT17Z2l0aHViQ29uZmlnLnRoZW1lfQogICAgICAgICAgICAgICAgcmVuZGVyQmxvY2s9eyhibG9jaywgYWN0aXZpdHkpID0+ICgKICAgICAgICAgICAgICAgICAgPENvbnRyaWJ1dGlvbkJsb2NrCiAgICAgICAgICAgICAgICAgICAga2V5PXthY3Rpdml0eS5kYXRlfQogICAgICAgICAgICAgICAgICAgIGJsb2NrPXtibG9ja30KICAgICAgICAgICAgICAgICAgICBhY3Rpdml0eT17YWN0aXZpdHl9CiAgICAgICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgICApfQogICAgICAgICAgICAgICAgbGFiZWxzPXt7CiAgICAgICAgICAgICAgICAgIG1vbnRoczogZ2l0aHViQ29uZmlnLm1vbnRocywKICAgICAgICAgICAgICAgICAgd2Vla2RheXM6IGdpdGh1YkNvbmZpZy53ZWVrZGF5cywKICAgICAgICAgICAgICAgICAgdG90YWxDb3VudDogZ2l0aHViQ29uZmlnLnRvdGFsQ291bnRMYWJlbC5yZXBsYWNlKAogICAgICAgICAgICAgICAgICAgICd7e2NvdW50fX0nLAogICAgICAgICAgICAgICAgICAgIFN0cmluZyh0b3RhbENvbnRyaWJ1dGlvbnMpLAogICAgICAgICAgICAgICAgICApLAogICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgICAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvVG9vbHRpcFByb3ZpZGVyPgogICAgICAgICl9CiAgICAgIAogICAgPC9Db250YWluZXI+CiAgKTsKfQo=
+'use client';
+
+import { githubConfig } from '@/config/Github';
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import React, {
+  type ReactElement,
+  cloneElement,
+  useEffect,
+  useState,
+} from 'react';
+import ActivityCalendar from 'react-activity-calendar';
+import type { Activity } from 'react-activity-calendar';
+
+import Container from '../common/Container';
+import GithubIcon from '../svgs/Github';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '../ui/tooltip';
+
+type ContributionItem = {
+  date: string;
+  count: number;
+  level: 0 | 1 | 2 | 3 | 4;
+};
+
+type ApiContribution = {
+  date: string;
+  count: number;
+  level: number;
+};
+
+type ApiResponse = {
+  total?: Record<string, number> | number;
+  contributions?: ApiContribution[];
+};
+
+function filterLastYear(contributions: ContributionItem[]): ContributionItem[] {
+  const oneYearAgo = new Date();
+  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+  oneYearAgo.setHours(0, 0, 0, 0);
+
+  return contributions
+    .filter((item) => new Date(`${item.date}T00:00:00`) >= oneYearAgo)
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+/**
+ * Zero-filled dataset for the last 365 days.
+ * Lets the calendar render its full structure immediately ("0 CONTRIBUTIONS"
+ * zero state, SSR-safe) instead of throwing on empty data; the real data
+ * silently replaces it when the fetch resolves — no spinner, no skeleton.
+ */
+function generateZeroYear(): ContributionItem[] {
+  const days: ContributionItem[] = [];
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  for (let i = 364; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    days.push({ date: `${yyyy}-${mm}-${dd}`, count: 0, level: 0 });
+  }
+  return days;
+}
+
+function toLevel(level: number): ContributionItem['level'] {
+  if (level <= 0) return 0;
+  if (level === 1) return 1;
+  if (level === 2) return 2;
+  if (level === 3) return 3;
+  return 4;
+}
+
+function formatContributionLabel(date: string, count: number) {
+  const formatted = new Date(`${date}T00:00:00`).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
+  if (count === 0) return `No contributions on ${formatted}`;
+
+  const word = count === 1 ? 'contribution' : 'contributions';
+  return `${count} ${word} on ${formatted}`;
+}
+
+function ContributionBlock({
+  block,
+  activity,
+}: {
+  block: ReactElement<{ style?: React.CSSProperties }>;
+  activity: Activity;
+}) {
+  return (
+    <Tooltip delayDuration={0}>
+      <TooltipTrigger asChild>
+        {cloneElement(block, {
+          style: {
+            ...block.props.style,
+            cursor: 'pointer',
+          },
+        })}
+      </TooltipTrigger>
+      <TooltipContent
+        side="top"
+        sideOffset={6}
+        className="animate-in fade-in-0 zoom-in-95 rounded-2xl border-0 bg-[#1f2328] px-2.5 py-1.5 text-[11px] font-normal text-white shadow-lg duration-150"
+      >
+        {formatContributionLabel(activity.date, activity.count)}
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
+
+export default function Github() {
+  const [contributions, setContributions] =
+    useState<ContributionItem[]>(generateZeroYear);
+  const [totalContributions, setTotalContributions] = useState(0);
+  const [hasError, setHasError] = useState(false);
+  const { theme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    async function fetchContributions() {
+      try {
+        const response = await fetch('/contributions.json', {
+          cache: 'no-store',
+        });
+
+        if (!response.ok) {
+          setHasError(true);
+          return;
+        }
+
+        const data: ApiResponse = await response.json();
+
+        if (!data?.contributions || !Array.isArray(data.contributions)) {
+          setHasError(true);
+          return;
+        }
+
+        const validContributions = data.contributions
+          .filter(
+            (item): item is ApiContribution =>
+              typeof item === 'object' &&
+              item !== null &&
+              typeof item.date === 'string' &&
+              typeof item.count === 'number',
+          )
+          .map((item) => ({
+            date: item.date,
+            count: item.count,
+            level: toLevel(Number(item.level) || 0),
+          }));
+
+        if (validContributions.length === 0) {
+          setHasError(true);
+          return;
+        }
+
+        const lastYear = filterLastYear(validContributions);
+        const total = lastYear.reduce((sum, item) => sum + item.count, 0);
+
+        setTotalContributions(total);
+        setContributions(lastYear);
+      } catch {
+        setHasError(true);
+      }
+    }
+
+    fetchContributions();
+  }, []);
+
+  const colorScheme = (resolvedTheme ?? theme) === 'dark' ? 'dark' : 'light';
+
+  return (
+    <Container className="mt-13">
+      
+        {hasError ? (
+          <Link
+            href={`https://github.com/${githubConfig.username}`}
+            target="_blank"
+            className="text-muted hover:text-primary inline-flex items-center gap-2 text-sm transition-colors"
+          >
+            <GithubIcon className="size-4" />
+            View GitHub profile
+          </Link>
+        ) : (
+          // Always render the calendar, even with empty data (shows "0 CONTRIBUTIONS").
+          // Data fills in silently when loaded — no spinner, no skeleton, like siddz.com.
+          <TooltipProvider delayDuration={0}>
+            <div className="overflow-x-auto">
+              <ActivityCalendar
+                data={contributions}
+                blockSize={11}
+                blockMargin={3}
+                fontSize={12}
+                colorScheme={colorScheme}
+                maxLevel={4}
+                hideTotalCount={false}
+                theme={githubConfig.theme}
+                renderBlock={(block, activity) => (
+                  <ContributionBlock
+                    key={activity.date}
+                    block={block}
+                    activity={activity}
+                  />
+                )}
+                labels={{
+                  months: githubConfig.months,
+                  weekdays: githubConfig.weekdays,
+                  totalCount: githubConfig.totalCountLabel.replace(
+                    '{{count}}',
+                    String(totalContributions),
+                  ),
+                }}
+              />
+            </div>
+          </TooltipProvider>
+        )}
+      
+    </Container>
+  );
+}
